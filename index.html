@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днем Святого Валентина!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #ffccd5;
+            background-image: url('https://www.transparenttextures.com/patterns/heart-pattern.png');
+            background-size: cover;
+            padding: 50px;
+            color: #6a1b9a;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 3em;
+            text-shadow: 2px 2px #ff80ab;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .yes-button, .no-button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .yes-button {
+            background-color: #4caf50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .no-button {
+            background-color: #d32f2f;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .yes-button:hover, .no-button:hover {
+            transform: scale(1.1);
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 30px;
+            font-size: 2em;
+            color: #d63384;
+            text-shadow: 2px 2px #ff80ab;
+        }
+    </style>
+</head>
+<body>
+    <h1>С Днем Святого Валентина! 💖</h1>
+    <p>Ты будешь моей Валентинкой? 😊</p>
+    <div class="buttons">
+        <button class="yes-button" onclick="showMessage()">Да!</button>
+        <button class="no-button" onmouseover="moveButton(this)">Нет 😢</button>
+    </div>
+    <p class="hidden-message" id="message">Я тебя люблю! 💕</p>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.position = 'absolute';
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
